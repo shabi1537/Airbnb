@@ -1,6 +1,6 @@
-# MERN Airbnb 🌍
+# StayEase 🌍
 
-A full-stack MERN (MongoDB, Express, React, Node.js) web application inspired by Airbnb, featuring:
+A full-stack web application inspired by Hotel Bookings websites, featuring:
 
 - 🔐 User authentication with sessions
 - 🖼️ File/image upload functionality
@@ -11,7 +11,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) web application inspired by
 
 ## 📦 Technologies Used
 
-- **Frontend:** React, Tailwind CSS
+- **Frontend:** EJS, Tailwind CSS
 - **Backend:** Express.js, Node.js
 - **Database:** MongoDB with Mongoose
 - **Session Store:** `connect-mongodb-session`
