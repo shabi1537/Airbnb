@@ -1,6 +1,5 @@
-# Airbnb
+# Airbnb MERN
 A full-stack MERN application inspired by Airbnb. Built with MongoDB, Express.js, React, and Node.js. Features include user authentication, session-based login, file/image uploads, hosting pages, and protected routes. Tailwind CSS is used for modern UI styling
-# MERN Airbnb Clone 🌍
 
 A full-stack MERN (MongoDB, Express, React, Node.js) web application inspired by Airbnb, featuring:
 
@@ -18,7 +17,8 @@ A full-stack MERN (MongoDB, Express, React, Node.js) web application inspired by
 - **Database:** MongoDB with Mongoose
 - **Session Store:** `connect-mongodb-session`
 - **Image Upload:** Multer or file system
-- **Environment Management:** dotenv
 
-## 📁 Folder Structure
+## 📝 License
+
+This project is open-source and available under the MIT License.
 
