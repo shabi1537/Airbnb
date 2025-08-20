@@ -1,0 +1,68 @@
+<%- include('../partials/head') %>
+</head>
+<body class="bg-gray-100 font-sans h-screen overflow-hidden flex flex-col">
+
+  <!-- Navbar -->
+  <%- include('../partials/nav') %>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex px-6 py-4 overflow-hidden">
+    <div class="bg-white shadow-xl rounded-lg flex flex-row w-full max-w-7xl mx-auto h-full overflow-hidden">
+
+      <!-- Left Side: Image -->
+      <div class="w-1/2 h-full">
+        <img
+          src="<%= home.photoUrl %>"
+          alt="<%= home.houseName %>"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Right Side: Details -->
+      <div class="w-1/2 p-8 flex flex-col justify-between overflow-hidden">
+        <!-- Top: Info -->
+        <div class="overflow-y-auto pr-2">
+          <h1 class="text-3xl font-bold text-gray-800 mb-4"><%= home.houseName %></h1>
+
+          <p class="text-lg text-gray-600 mb-2 flex items-center">
+            <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+            <%= home.location %>
+          </p>
+
+          <p class="text-xl font-semibold text-blue-600 mb-2">
+            ₹<%= home.price %> / night
+          </p>
+
+          <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 .587l3.668 7.57L24 9.748l-6 5.847L19.335 24 12 19.771 4.665 24 6 15.595 0 9.748l8.332-1.591z"/>
+            </svg>
+            <span class="text-gray-700 text-md"><%= home.rating %> stars</span>
+          </div>
+
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Welcome to your perfect stay! Clean, cozy, and conveniently located in <%= home.location %>.
+            Enjoy stunning views and comfortable living during your stay.
+          </p>
+        </div>
+
+        <!-- Bottom: Buttons -->
+        <div class="mt-6 flex flex-wrap gap-4">
+          <!-- Book Now -->
+          <a href="/book" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg font-semibold transition">
+            Book Now
+          </a>
+
+          <!-- Back -->
+          <a href="/homes" class="bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-6 rounded-lg font-medium transition">
+            Back
+          </a>
+
+          <%- include('../partials/favourite-button', { home: home }) %>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

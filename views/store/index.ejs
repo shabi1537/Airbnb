@@ -1,0 +1,38 @@
+<%- include('../partials/head') %>
+</head>
+<body class="bg-gray-100 font-sans">
+  <%- include('../partials/nav') %>
+
+  <main class="container mx-auto p-8 mt-8 max-w-7xl">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+      Discover Our Featured Homes
+    </h2>
+
+    <% if (registeredHomes.length === 0) { %>
+      <p class="text-center text-gray-500">No homes have been registered yet.</p>
+    <% } else { %>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <% registeredHomes.forEach(home => { %>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl">
+            <img src="<%= home.photoUrl %>" alt="<%= home.houseName %>" class="w-full h-52 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-800 mb-1"><%= home.houseName %></h3>
+              <p class="text-sm text-gray-500 mb-2"><%= home.location %></p>
+              <p class="text-lg font-bold text-blue-600">₹<%= home.price %> / night</p>
+              <div class="flex items-center mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 text-yellow-400 mr-1" viewBox="0 0 24 24">
+                  <path d="M12 .587l3.668 7.57L24 9.748l-6 5.847L19.335 24 12 19.771 4.665 24 6 15.595 0 9.748l8.332-1.591z"/>
+                </svg>
+                <span class="text-sm text-gray-600"><%= home.rating || '4.5' %></span>
+              </div>
+              <button class="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded transition">
+                Book Now
+              </button>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
+</body>
+</html>

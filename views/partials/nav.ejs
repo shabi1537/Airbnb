@@ -1,0 +1,43 @@
+<header class="bg-gray-800 text-white shadow-md">
+  <nav class="container mx-auto flex justify-between items-center py-6 px-4">
+    <div class="text-2xl font-bold tracking-wide">Airbnb</div>
+    <ul class="flex space-x-6 items-center">
+      <li>
+        <a href="/" class="<%= currentPage === 'index' ? 'bg-gray-700' : 'hover:bg-gray-700' %> py-2 px-4 rounded transition">🏠︎ Home</a>
+      </li>
+
+      <% if (isLoggedIn) { %>
+        <% if(user && user.userType === 'guest'){ %>
+        <li>
+          <a href="/homes" class="<%= currentPage === 'Home' ? 'bg-gray-700' : 'hover:bg-gray-700' %> py-2 px-4 rounded transition">🏡 Homes List</a>
+        </li>
+        <li>
+          <a href="/favourites" class="<%= currentPage === 'favourites' ? 'bg-gray-700' : 'hover:bg-gray-700' %> py-2 px-4 rounded transition">✮ Favourites</a>
+        </li>
+        <li>
+          <a href="/bookings" class="<%= currentPage === 'bookings' ? 'bg-gray-700' : 'hover:bg-gray-700' %> py-2 px-4 rounded transition">📅 Bookings</a>
+        </li>
+        <% }else{ %>
+        <li>
+          <a href="/host/host-home-list" class="<%= currentPage === 'host-homes' ? 'bg-gray-700' : 'hover:bg-gray-700' %> py-2 px-4 rounded transition">🏘️ Host Homes</a>
+        </li>
+        <li>
+          <a href="/host/add-home" class="<%= currentPage === 'addHome' ? 'bg-blue-600 text-white' : 'hover:bg-blue-500' %> py-2 px-4 rounded transition">✚ Add Home</a>
+        </li>
+        <% } %>
+      <% } %>
+
+      <li>
+        <% if (!isLoggedIn) { %>
+          <a href="/login" class="<%= currentPage === 'login' ? 'bg-red-600' : 'hover:bg-red-600' %> py-2 px-4 rounded transition">Login ➜</a>
+        <% } else { %>
+          <form action="/logout" method="POST" class="inline">
+            <button type="submit" class="bg-red-600 hover:bg-red-400 cursor-pointer py-2 px-4 rounded transition text-white">
+              Logout ➜]
+            </button>
+          </form>
+        <% } %>
+      </li>
+    </ul>
+  </nav>
+</header>

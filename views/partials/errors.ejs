@@ -1,0 +1,11 @@
+<!-- Error messages -->
+      <% if (errors && errors.length > 0) { %>
+        <div class="mb-6 bg-red-200 border border-red-600 text-red-900 px-4 py-3 rounded relative">
+          <strong class="font-bold">Oops try again</strong>
+          <ul class="list-disc list-inside mt-2">
+            <% errors.forEach(function(error) { %>
+              <li>• <%= error %></li>
+            <% }); %>
+          </ul>
+        </div>
+      <% } %>
